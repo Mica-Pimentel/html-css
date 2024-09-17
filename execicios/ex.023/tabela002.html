@@ -13,6 +13,7 @@
     table {
       width: 500px;
       border-collapse: collapse;
+      position: relative;
     }
 
     caption {
@@ -29,10 +30,22 @@
       color: white;
     }
 
+    thead>tr>th {
+      position: sticky;
+      top: -1px;
+      background-color: gray;
+    }
+
     th,
     td {
       border: 1px solid black;
       padding: 10px;
+    }
+
+
+
+    tbody tr:nth-child(2n) {
+      background-color: lightblue;
     }
 
     td.num {
@@ -57,8 +70,8 @@
     <caption>População do Brasil</caption>
     <thead>
       <tr>
-        <th>Estado</th>
-        <th>população</th>
+        <th scope="col">Estado</th>
+        <th scope="col">população</th>
 
       </tr>
     </thead>
@@ -175,7 +188,7 @@
     </tbody>
     <tfoot>
       <tr>
-        <th>Total de habiitantes</th>
+        <th scope="row">Total de habiitantes</th>
         <td class="num"><strong>212 583 720</strong></td>
       </tr>
     </tfoot>
